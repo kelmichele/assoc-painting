@@ -1,0 +1,20 @@
+// Place all the styles related to the static_pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "mixins";
+@import "variables";
+
+
+.home {
+
+	.home-header {@include sec-default(); height: 600px; @include sec-bgimage();
+		background-image: url(image_path('placeholder-hd.jpg'));
+	}
+
+	.home-s1 {@include sec-default(); padding: $full-padding;}
+	.service-box{ border: 1px solid $lgray; position: relative;
+		&::after {content: ''; position: absolute; width: 50px; height: 50px; background-color: $blue; color: $white; bottom: 0; right: 0;
+			background-image: url(image_path('roller-clear.png')); background-position: center center; background-repeat: no-repeat; background-size: 90%;}
+		.inner {@include sec-default();padding: 40px;}
+	}
+}

@@ -13,5 +13,8 @@
 !/log/.keep
 !/tmp/.keep
 
+/config/database.yml
+/config/secret_token.rb
+
 # Ignore Byebug command history file.
 .byebug_history
