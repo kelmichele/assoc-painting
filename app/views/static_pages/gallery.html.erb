@@ -1,3 +1,6 @@
+<% @page_title = "Project Gallery" %>
+<% @page_description = "New Subject" %>
+
 <div class="clearfix"></div>
 
 <section class="project-gallery">
@@ -6,8 +9,8 @@
 		<% $max = 53 %>
 		<% while $i < $max  do %>
 			<% tag = $i +=1 %>
-			<% link = "projects/ap-gallery"+"#{tag}"+".jpg" %>
-			<% target = "projects/ap-gallery"+"#{tag}"+".jpg" %>
+			<% link = "https://s3.amazonaws.com/assoc-painting/ap-gallery"+"#{tag}"+".jpg" %>
+			<% target = "https://s3.amazonaws.com/assoc-painting/ap-gallery"+"#{tag}"+".jpg" %>
 
 			<%= link_to(image_tag("#{link}", class: 'img-responsive gall', alt: 'Associate Painting Project Gallery'), image_path("#{target}"), data: { lightbox: "example-set"}) %>
 		<% end %>
