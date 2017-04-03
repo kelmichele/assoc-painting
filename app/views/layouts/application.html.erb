@@ -5,8 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-		<%= render 'layouts/rails_default' %>
-    <%= render 'layouts/shim' %>
+		<!-- <%= render 'layouts/rails_default' %>  -->
+    <meta name="description" content= "<%= @page_description %>">
+    <title><%= @page_title  %> | Associate Painting</title>
+
+      <%= csrf_meta_tags %>
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <% unless current_page?(gallery_path) %> <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %> <% end %>
+      <%= render 'layouts/shim' %>
 
   </head>
 
@@ -20,6 +26,7 @@
       	<%= yield %>
       </div>
     <%= render 'layouts/footer' %>
+    <% if current_page?(gallery_path) %> <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %> <% end %>
   </body>
 </html>
 

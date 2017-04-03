@@ -6,7 +6,6 @@
 
 
 .home {
-
 	.home-header {@include sec-default(); height: 600px; @include sec-bgimage();
 		background-image: url(image_path('placeholder-hd.jpg'));
 	}
@@ -17,4 +16,17 @@
 			background-image: url(image_path('roller-clear.png')); background-position: center center; background-repeat: no-repeat; background-size: 90%;}
 		.inner {@include sec-default();padding: 40px;}
 	}
+}
+
+
+.gallery {
+	.project-gallery { text-align: center;
+		@include sec-default(); padding: 55px 40px;
+		.gall {width: 19.5%; display: inline-block; padding:5px; margin-bottom: 20px; max-height: 200px;}
+	}
+
+	@include bp(tb) {
+		.project-gallery .gall {width: 24%; }
+	}
+
 }
