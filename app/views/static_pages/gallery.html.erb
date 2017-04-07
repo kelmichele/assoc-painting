@@ -5,14 +5,26 @@
 
 <section class="project-gallery">
 	<div>
-		<% $i = 0 %>
-		<% $max = 53 %>
-		<% while $i < $max  do %>
-			<% tag = $i +=1 %>
-			<% link = "https://s3.amazonaws.com/assoc-painting/ap-gallery"+"#{tag}"+".jpg" %>
-			<% target = "https://s3.amazonaws.com/assoc-painting/ap-gallery"+"#{tag}"+".jpg" %>
 
-			<%= link_to(image_tag("#{link}", class: 'img-responsive gall', alt: 'Associate Painting Project Gallery'), image_path("#{target}"), data: { lightbox: "example-set"}) %>
-		<% end %>
+
+
+		<section class="project-gallery" style="background-color: #ececec;">
+			<% @projects.each do |project| %>
+				<% $i = 0 %>
+				<% $max = 53 %>
+				<% while $i < $max  do %>
+					<% tag = $i +=1 %>
+
+					<% link = "https://s3.amazonaws.com/assoc-painting/ap-gallery"+"#{tag}"+".jpg" %>
+					<%= link_to(image_tag("#{link}", class: 'img-responsive gall', alt: 'Associate Painting Project Gallery'), image_path("#{link}"), data: { lightbox: "example-set"}) %>
+				<% end %>
+			<% end %>
+
+			</div>
+		</section>
+
+
+
 	</div>
+
 </section>

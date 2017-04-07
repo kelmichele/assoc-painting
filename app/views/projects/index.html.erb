@@ -1,0 +1,18 @@
+<% @page_title = "Project Gallery" %>
+<% @page_description = "New Subject" %>
+
+<div class="clearfix"></div>
+
+<section class="project-gallery" style="background-color: #ececec;">
+	<% tag = 0 %>
+
+	<% @projects.each do |project| %>
+	  <% tag +=1 %>
+		<% link = "https://s3.amazonaws.com/assoc-painting/ap-gallery"+"#{tag}"+".jpg" %>
+		<%= link_to(image_tag("#{link}", class: 'img-responsive gall', alt: 'Associate Painting Project Gallery'), image_path("#{link}"), data: { lightbox: "example-set"}) %>
+	<% end %>
+
+	</div>
+</section>
+
+

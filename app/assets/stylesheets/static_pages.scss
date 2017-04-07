@@ -6,20 +6,58 @@
 
 
 .home {
-	.home-header {@include sec-default(); height: 600px; @include sec-bgimage();
-		background-image: url(image_path('placeholder-hd.jpg'));
+	.home-header {@include sec-default(); height: 650px; @include sec-bgimage();
+		background-position: center center;
+		background-image: url(image_path('beach-homes.jpg'));
 	}
 
-	.home-s1 {@include sec-default(); padding: $full-padding;}
-	.service-box{ border: 1px solid $lgray; position: relative;
-		&::after {content: ''; position: absolute; width: 50px; height: 50px; background-color: $blue; color: $white; bottom: 0; right: 0;
-			background-image: url(image_path('roller-clear.png')); background-position: center center; background-repeat: no-repeat; background-size: 90%;}
-		.inner {@include sec-default();padding: 40px;}
+	.home-banner {@include sec-default();
+		.content {color: $white; width:50%; float: left; background-color: $blue; padding: 20px 0px 20px 80px;
+			margin-left: -24px; box-shadow: 10px 10px 10px rgba($black, .2);
+			@include skew(-25deg);
+
+			.inner {@include sec-default(); @include skew-txt(25deg);}
+		}
+		.icon {width: 55px; height: auto; display: inline-block;float: left; margin-right: 10px;}
+		h3 {margin-bottom: 2px;}
+		p {text-transform: uppercase; }
+	}
+
+	.home-sec1 {@include sec-default(); padding: $sec-padding; background-color: $white;
+		position: relative; z-index: 0;
+		&:before {@include lg-skew($silver); }
+
+		.servicesec {width: 90%; @include center-block();}
+		.inside {@include sec-default(); text-align: center; padding-top: 50px;}
+		.title-blk { width: 30%; float: left; }
+		.service-blk {width: 30%; display: inline-block; float: none; height: 170px; margin: 15px 0 10px 2%; @include sec-bgimage();
+			.over {@include sec-default(); background-color: rgba($black, .2); height: 100%; padding-top: 60px;}
+			&.res {background-image: url(image_path('residential.jpg')); background-position: center center; margin-top: 40px;}
+			&.com {background-image: url(image_path('warehouse.jpg')); margin-top: 40px;}
+			&.new {background-image: url(image_path('visual.jpg')); margin-left: 45px;}
+			&.cus {background-image: url(image_path('colors.jpg'));}
+			h3 {color: $white; font-weight: bold; @include tshadowl($dark);}
+		}
+		.service-arr {width: auto; @include center-block(); font-size: 18px; font-weight: bold; font-family: $open; color: $blue;
+			i {font-size: 22px;}
+		}
+	}
+
+	.home-sec2 {@include sec-default(); background-color: $blue; @include sec-bgimage(); background-image: url(image_path('spray-temp.jpg')); background-size: 75%;
+		// height: 350px;
+		position: relative; z-index: 0; padding: 80px 0;
+		&:before {@include before(); width: 75%; background-color: rgba($black, .6);}
+		.content {width:50%; float: right; color: $white; }
+		.box-link {width: 30%; display: inline-block; float: none; height: 100px; margin-left: 5%; @include sec-bgimage();
+			&.quote {background-image: url(image_path('warehouse.jpg'));}
+			&.gall {background-image: url(image_path('warehouse.jpg'));}
+
+		}
 	}
 }
 
 
-.gallery {
+.projects, .gallery {
 	.project-gallery { text-align: center;
 		@include sec-default(); padding: 55px 40px;
 		.gall {width: 19.5%; display: inline-block; padding:5px; margin-bottom: 20px; max-height: 200px;}
@@ -28,5 +66,20 @@
 	@include bp(tb) {
 		.project-gallery .gall {width: 24%; }
 	}
-
 }
+
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+.pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}

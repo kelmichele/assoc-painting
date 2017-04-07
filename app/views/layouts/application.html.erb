@@ -11,7 +11,7 @@
 
       <%= csrf_meta_tags %>
       <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-      <% unless current_page?(gallery_path) %> <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %> <% end %>
+      <% unless current_page?(project_gallery_path) or current_page?(gallery_path) %> <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %> <% end %>
       <%= render 'layouts/shim' %>
 
   </head>
@@ -26,7 +26,7 @@
       	<%= yield %>
       </div>
     <%= render 'layouts/footer' %>
-    <% if current_page?(gallery_path) %> <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %> <% end %>
+    <% if current_page?(project_gallery_path) or current_page?(gallery_path) %> <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %> <% end %>
   </body>
 </html>
 
