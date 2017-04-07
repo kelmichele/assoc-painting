@@ -1,7 +1,7 @@
 @import "mixins";
 @import "variables";
 
-header {@include sec-default(); height: 125px;}
+// header {@include sec-default(); height: 125px; }
 .logo-block {display: inline-block;float: left;}
 
 #nav {
@@ -42,3 +42,27 @@ header {@include sec-default(); height: 125px;}
     }
 }
 
+
+
+header.custom {
+    @include sec-default();
+    position: absolute;
+    top: 0;
+    z-index: 555;
+    text-align: center;
+
+    .contact-info, .logo-block, nav { display: inline-block; text-align: center; float: left;}
+    .logo {width: 250px;padding: 10px 0 0;}
+    .logo-block {float: none;margin: 0 auto; }
+    nav {float: right;}
+
+    ul {margin-top:60px; text-align: left; }
+    li  {
+        color: $black;
+        display: inline-block;
+        margin-right: 30px;
+    }
+    a {color: $black; font-size: 16px;}
+
+    .contact-info { margin-top: 50px; display: inline-block; float: left; h4 {display: inline-block; float: left; margin-right: 20px;}}
+}
