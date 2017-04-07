@@ -12,46 +12,73 @@
 	}
 
 	.home-banner {@include sec-default();
-		.content {color: $white; width:50%; float: left; background-color: $blue; padding: 20px 0px 20px 80px;
-			margin-left: -24px; box-shadow: 10px 10px 10px rgba($black, .2);
+		.content {color: $white; width:60%; float: left; background-color: $blue; padding: 20px 50px;
+			margin-left: -30px; box-shadow: 10px 10px 10px rgba($black, .2);
 			@include skew(-25deg);
 
 			.inner {@include sec-default(); @include skew-txt(25deg);}
 		}
 		.icon {width: 55px; height: auto; display: inline-block;float: left; margin-right: 10px;}
-		h3 {margin-bottom: 2px;}
-		p {text-transform: uppercase; }
+		h3 {margin-bottom: 5px;}
+		span.space {}
+		p {margin-left: 10px; }
 	}
 
-	.home-sec1 {@include sec-default(); padding: $sec-padding; background-color: $white;
+	.home-sec1 {@include sec-default(); padding: 40px 0 65px; background-color: $white;
 		position: relative; z-index: 0;
 		&:before {@include lg-skew($silver); }
 
 		.servicesec {width: 90%; @include center-block();}
-		.inside {@include sec-default(); text-align: center; padding-top: 50px;}
-		.title-blk { width: 30%; float: left; }
-		.service-blk {width: 30%; display: inline-block; float: none; height: 170px; margin: 15px 0 10px 2%; @include sec-bgimage();
-			.over {@include sec-default(); background-color: rgba($black, .2); height: 100%; padding-top: 60px;}
-			&.res {background-image: url(image_path('residential.jpg')); background-position: center center; margin-top: 40px;}
-			&.com {background-image: url(image_path('warehouse.jpg')); margin-top: 40px;}
-			&.new {background-image: url(image_path('visual.jpg')); margin-left: 45px;}
-			&.cus {background-image: url(image_path('colors.jpg'));}
+		.inside {@include sec-default(); padding-top: 50px;}
+		.title-blk {display: inline-block; width: 32%; float: left; padding-right:10px;
+			h4 {font-weight: bold;
+				span {font-weight: normal; font-size: 16px; }}
+			p {padding-left: 10px;}
+		}
+
+		.service-blocks{width: 65%; display: inline-block; float: right; }
+		.service-blk {width: 49%; display: inline-block; height: 170px; @include sec-bgimage(); margin: 5px 0;
+			.over {@include sec-default(); background-color: rgba($black, .2); height: 100%; padding-left:15px; padding-top: 60px;}
+			&.res {background-image: url(image_path('side-turq.jpg'));float: left;}
+			&.com {background-image: url(image_path('warehouse.jpg'));float: right;}
+			&.new {background-image: url(image_path('visual.jpg')); float: left;}
+			&.cus {background-image: url(image_path('color-swatch.jpg')); float: right;}
 			h3 {color: $white; font-weight: bold; @include tshadowl($dark);}
 		}
-		.service-arr {width: auto; @include center-block(); font-size: 18px; font-weight: bold; font-family: $open; color: $blue;
+
+		.top {width: 95%; float: none;}
+		.bottom {width: 95%; float: right;}
+
+		.service-arr {text-align: center; font-size: 18px; font-weight: bold; font-family: $open; color: $blue;
 			i {font-size: 22px;}
 		}
 	}
 
-	.home-sec2 {@include sec-default(); background-color: $blue; @include sec-bgimage(); background-image: url(image_path('spray-temp.jpg')); background-size: 75%;
-		// height: 350px;
-		position: relative; z-index: 0; padding: 80px 0;
-		&:before {@include before(); width: 75%; background-color: rgba($black, .6);}
-		.content {width:50%; float: right; color: $white; }
-		.box-link {width: 30%; display: inline-block; float: none; height: 100px; margin-left: 5%; @include sec-bgimage();
-			&.quote {background-image: url(image_path('warehouse.jpg'));}
-			&.gall {background-image: url(image_path('warehouse.jpg'));}
+	.home-sec2 {@include sec-default(); background-color: $blue; @include sec-bgimage(); background-image: url(image_path('residential-hd.jpg')); background-size: 80%;
+		position: relative; z-index: 0; padding: 80px 0 30px;
+		&:before {@include before(); width: 80%; background-color: rgba($black, .7);}
 
+		.content {width:60%; @include center-block(); color: $white; text-align: right; padding-bottom: 30px;
+				h3 {font-weight: bold;@include tshadow($dark); text-transform: uppercase; font-size: 26px; margin-bottom:25px;
+					span {font-weight: normal; }
+				}
+		}
+		.boxes {width:85%; @include center-block(); margin-top:15px;}
+		.box-link {width: 30%; display: inline-block; float: right; margin:0 0 20px 20px; height: 300px; background-color: $light; position: relative; z-index: 0;
+			@include sec-bgimage(); background-image: url(image_path('brush-strokes.jpg'));
+			&:before {@include before(); background-color: rgba($white, .5);}
+
+			.overlay {@include sec-default(); height:100%; padding:30px 10px 20px; @include sec-bgimage();}
+			&.quote .overlay {text-align: center;background-position:center center; background-image: url(image_path('logo-shape.png'));
+				.text {@include sec-default(); padding: 70px 0 35px;}
+			}
+			&.gall .overlay{padding: 50px 30px 30px; background-image: url(image_path('estate.png')); background-position: bottom right; background-size: 65%;}
+
+			h3 {font-weight: bold;text-transform: uppercase; color:$blue; }
+			h4 {font-weight: bold; text-transform: uppercase; margin-bottom: 5px}
+			a, .phone { font-weight: bold; font-size: 24px;  text-transform: uppercase; @include tshadowl(rgba($dark, .4)); color: lighten($blue, 25%);
+				&:hover {color: $blue;}
+			}
 		}
 	}
 }
