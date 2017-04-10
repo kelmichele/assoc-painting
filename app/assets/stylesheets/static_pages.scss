@@ -305,6 +305,16 @@
 			width:95%;
 			h1 {font-size: 25px;}
 		}
+
+		.project-gallery { padding: 20px;
+		 	.gall {width: 30%; }
+	 	}
+	}
+
+	@include bp(xs) {
+		.project-gallery { padding: 20px 10px;
+		 	.gall {width: 45%; }
+	 	}
 	}
 }
 
