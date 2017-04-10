@@ -79,7 +79,7 @@ h5 {font-size: 15px;}
     height: 40px;
     position: fixed;
     bottom: 15px;
-    right: 40px;
+    right: 15px;
     display: none;
     text-indent: -9999px;
     background-image: url(image_path('paint-sets.png'));
@@ -91,7 +91,7 @@ h5 {font-size: 15px;}
     visibility: hidden;
 
   @include bp(tb) { visibility: visible; }
-  @include bp(md) { right: 5px;width: 25px; height: 25px; }
+  @include bp(md) { right: 10px;}
 }
 
 footer {
@@ -101,6 +101,13 @@ footer {
     a {color: $light; font-weight: bold;}
     p {display: inline-block;
         &.design{float: right;}
+    }
+
+    @include bp(md) {
+        p {display:block; text-align: center; font-size: 15px;
+            &.design{float: none; }
+        }
+
     }
     // text-align: center;
 }

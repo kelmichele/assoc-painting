@@ -101,12 +101,11 @@
 		.home-header { height: 700px;
 			.overlay {padding-top:300px;}
 		}
-
 	}
 
 	@include bp(tb) {
 		.home-header{height:500px;
-			.overlay{padding-top:200px;}
+			.overlay{padding-top:200px; background-position: center center;}
 		}
 
 		.home-banner {
@@ -188,7 +187,17 @@
 		}
 	}
 
+	@include bp(mb) {
+		.home-header {height:auto;
+			.overlay {padding: 60px 0;}
+			.text-box {width: 95%;}
+		}
+
+	}
+
 	@include bp(ph) {
+
+		.home-header {.overlay {padding: 35px 0 15px;}}
 		.home-banner {
 			.inner { padding: 0 15px;}
 			p {margin-left: 0}
@@ -219,7 +228,6 @@
 	}
 
 	@include bp(xs) {
-
 		.home-sec1 {
 			.title-blk {padding: 10px 10px 0;}
 			.service-blk {height: 80px; width: 95%;
@@ -252,7 +260,6 @@
 	background-color: #ececec;
 	header, header h4 {font-weight: bold;}
 
-
 	.head-pg {
 		@include sec-default(); background-color:$white; @include sec-bgimage(); background-image: url(image_path('rolled.jpg')); height:300px;
 		.over{@include sec-default(); background-color:rgba($white, .9); height:100%; }
@@ -271,7 +278,33 @@
 	}
 
 	@include bp(tb) {
+		.head-pg {height:220px;}
+
+		.head-box {
+			width:80%; margin-top: -100px; padding: 15px;
+			.content { padding: 10px}
+			h1 {margin-bottom: 5px; font-size: 30px;}
+		}
 		.project-gallery .gall {width: 24%; }
+	}
+
+	@include bp(md) {
+		.head-pg {height:180px;}
+
+		.head-box {
+			width:90%; margin-top: 10px; padding: 15px;
+			.content { padding: 10px}
+			h1 {margin-bottom: 5px; font-size: 30px;}
+		}
+	}
+
+	@include bp(mb) {
+		.head-pg {display: none;}
+
+		.head-box {
+			width:95%;
+			h1 {font-size: 25px;}
+		}
 	}
 }
 

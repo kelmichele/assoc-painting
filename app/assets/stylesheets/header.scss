@@ -43,10 +43,19 @@ header.custom {
     }
 
     @include bp(mb) {
-        li, h4  {margin-right:25px}
-        h4.email {margin-right:20px;}
+        position: relative; background-color: $white;
+        li, h4 {margin: 0 10px;}
+        ul{padding-left: 0;}
+    }
+    @include bp(ph) {
+        nav, .contact-info {@include sec-default();}
+        h4  {@include sec-default(); margin: 5px auto; text-align: center;
+            &.email {margin-bottom: 10px;}
+        }
 
     }
 
+    @include bp(xs) {
+    }
 }
 
