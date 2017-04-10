@@ -6,9 +6,32 @@
 
 
 .home {
-	.home-header {@include sec-default(); height: 650px; @include sec-bgimage();
-		background-position: center center;
+	.home-header {@include sec-default(); height: 700px; @include sec-bgimage();
+		background-position: bottom center;
 		background-image: url(image_path('beach-homes.jpg'));
+		// padding-top:350px;
+
+		.overlay {
+			@include sec-default();
+			height:100%;
+			padding-top:300px;
+			@include sec-bgimage();
+			background-image: url(image_path('roller-header.png'));
+			// background-image: url(image_path('roller-header-op.png'));
+		}
+
+		.text-box {
+			// @include sec-default();
+			padding-left:40px;
+			width: 45%;
+			float: left;
+			text-align: center;
+			h3 {font-weight: bold; color: darken($blue, 10%);
+					&.quote {color:$blue;}
+			}
+			.title-line { width: 40%; @include center-block(); height: 1px; background-color: rgba($blue, .4); margin: 20px auto; }
+			.h1-img {width:75%;}
+		}
 	}
 
 	.home-banner {@include sec-default();
@@ -19,8 +42,7 @@
 			.inner {@include sec-default(); @include skew-txt(25deg);}
 		}
 		.icon {width: 55px; height: auto; display: inline-block;float: left; margin-right: 10px;}
-		h3 {margin-bottom: 5px;}
-		span.space {}
+		h3 {margin-bottom: 5px;font-weight: bold;}
 		p {margin-left: 10px; }
 	}
 
@@ -39,7 +61,7 @@
 		.service-blocks{width: 65%; display: inline-block; float: right; }
 		.service-blk {width: 49%; display: inline-block; height: 170px; @include sec-bgimage(); margin: 5px 0;
 			.over {@include sec-default(); background-color: rgba($black, .2); height: 100%; padding-left:15px; padding-top: 60px;}
-			&.res {background-image: url(image_path('side-turq.jpg'));float: left;}
+			&.res {background-image: url(image_path('cust.jpg'));float: left;}
 			&.com {background-image: url(image_path('warehouse.jpg'));float: right;}
 			&.new {background-image: url(image_path('visual.jpg')); float: left;}
 			&.cus {background-image: url(image_path('color-swatch.jpg')); float: right;}
@@ -49,7 +71,7 @@
 		.top {width: 95%; float: none;}
 		.bottom {width: 95%; float: right;}
 
-		.service-arr {text-align: center; font-size: 18px; font-weight: bold; font-family: $open; color: $blue;
+		.service-arr {text-align: right; font-size: 18px; font-weight: bold; font-family: $open; color: $blue;
 			i {font-size: 22px;}
 		}
 	}
@@ -85,8 +107,24 @@
 
 
 .projects, .gallery {
+	background-color: #ececec;
+	header, header h4 {font-weight: bold;}
+
+
+	.head-pg {
+		@include sec-default(); background-color:$white; @include sec-bgimage(); background-image: url(image_path('rolled.jpg')); height:300px;
+		.over{@include sec-default(); background-color:rgba($white, .9); height:100%; }
+	}
+
+	.head-box {
+		width:30%; @include center-block(); background-color: $white; text-align: center; position: relative; margin-top: -130px; margin-bottom:40px; padding: 20px; color: $blue;
+		.content { border: 1px solid $blue; background-color:$white; padding: 20px 10px}
+		h1 {margin-bottom: 15px; font-weight: bold; text-transform: uppercase;}
+		h4 {font-weight: bold; }
+	}
+
 	.project-gallery { text-align: center;
-		@include sec-default(); padding: 55px 40px;
+		@include sec-default(); padding: 40px;
 		.gall {width: 19.5%; display: inline-block; padding:5px; margin-bottom: 20px; max-height: 200px;}
 	}
 
