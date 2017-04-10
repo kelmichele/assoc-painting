@@ -1,20 +1,19 @@
 <header class="custom">
-	<!-- <div id="nav" class="stick"> -->
-		<div class="container">
-				<div class="contact-info">
-					<h4><%= number_to_phone(2515047175, delimiter: '-') %></h4>
-					<h4><%= mail_to('joedfranco@yahoo.com') %></h4>
-				</div>
+	<div class="header-box">
+	  <div class="logo-block"><%= link_to(image_tag( 'ap-logo.png', alt: 'Associate Painting - Logo', class: 'img-responsive logo'), root_path ) %></div>
 
-			  <div class="logo-block"><%= link_to(image_tag( 'ap-logo.png', alt: 'Associate Painting - Logo', class: 'img-responsive logo'), root_path ) %></div>
-
+		<div class="hcontent">
 				<nav>
 					<ul>
 						<li class="menu-item"><%= link_to "Home", root_path %></li>
 						<li class="menu-item"><%= link_to "Project Gallery", project_gallery_path %></li>
-						<li class="menu-item"><a href="tel: +12515047175"> Call for a Quote</a></li>
 					</ul>
 				</nav>
-			</div>
+
+				<div class="contact-info">
+					<h4 class="phone"><%= number_to_phone(2515047175, delimiter: '-') %></h4>
+					<h4 class="email"><%= mail_to('joedfranco@yahoo.com') %></h4>
+				</div>
 		</div>
+	</div>
 </header>
